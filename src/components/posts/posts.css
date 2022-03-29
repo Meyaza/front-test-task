@@ -1,0 +1,26 @@
+.posts {
+    max-width: 1200px;
+    float:right;
+    margin-top: 44px;
+}
+
+.post-name {
+    color: #384758;
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.post-content {
+   margin-top: 35px;
+   margin-bottom: 125px;
+   margin-left: 150px;
+}
+
+.icon {
+    margin-right: 34px;
+    margin-top: 12px;
+}
+
+.icon-title {
+    display: flex;
+}

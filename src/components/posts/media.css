@@ -1,0 +1,14 @@
+@media (max-width: 700px) {
+    .post-name {
+        font-size: 24px ;
+    }
+    .icon {
+        width: 0px;
+        height: 0px;
+        display: none;
+    }
+    .post-content {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}

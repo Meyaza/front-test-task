@@ -1,0 +1,19 @@
+.main-content {
+    flex-flow: column;
+}
+
+.user {
+    margin-top: 32px;
+}
+  
+.main {
+    margin-left: 25px;
+}
+
+
+.slider-one {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
