@@ -18,6 +18,7 @@ const Posts = ({posts, activeCompany}) => {
             <div className='post-content'>
                 {posts.map (post =>
                     <Post 
+                        key = {post.id}
                         post = {post}
                     />
                 )}
