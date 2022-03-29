@@ -36,8 +36,13 @@
 }
 
 
+.leftArrow {
+    z-index: 2;
+}
+
 .rightArrow {
     margin-left: 19px;
+    z-index: 2;
 }
 
 .svg-1 {
