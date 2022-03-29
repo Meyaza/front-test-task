@@ -2,9 +2,9 @@ import React from 'react';
 import './cover.css';
 
 
-const Cover = ({image = ''}) => {
+const Cover = ({image = '', act}) => {
     return (
-        <div className='blog-cover' style={{ backgroundImage: `url(${image})` }}>
+        <div className={act === true ? 'cover active' : 'cover'} style= {{backgroundImage: `url(${image})` }}>
         </div>
     );
 };
