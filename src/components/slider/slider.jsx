@@ -7,6 +7,7 @@ import 'swiper/css';
 
 const Slider = () => {
     const [users, setUsers] = useState([])
+    const [activeCompany, setActiveCompany] = useState()
     const [isSlideLoading, setIsSlideLoading] = useState(false);
     const [posts, setPosts] = useState([]);
     const [idActive, setIdActive] = useState()
@@ -17,18 +18,20 @@ const Slider = () => {
         .then(json => setUsers(json))
         setIsSlideLoading(false);
     }
-    useEffect(() => {
+    useEffect(()=> {
         fetchData()
     }, [])
 
-    const handleClick = async(id) => {
+    const handleClick = async(id, name) => {
         await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${id}&_limit=3`)
         .then(response => response.json())
         .then(json => setPosts(json))
+        setActiveCompany(name)
         setIdActive(id)
     }
-    useEffect(() => {
-        handleClick(2)
+
+    useEffect(()=> {
+        handleClick(2, 'Deckow-Crist')
     }, [])
     
     return (
@@ -55,7 +58,7 @@ const Slider = () => {
                 >
                     {users.map (user => 
                             <SwiperSlide key = {user.name}>
-                                <div className= 'user' onClick = { () => handleClick(user.id)}>
+                                <div className= 'user' onClick = { () => handleClick(user.id, user.company.name)}>
                                     <Cover
                                         act = {user.id === idActive ? true : false}
                                         image={`https://i.pravatar.cc/320?img=${user.id}`} 
@@ -67,17 +70,15 @@ const Slider = () => {
                                     <p className={user.id === idActive ? 'slide-company activeName' : 'slide-company'}>
                                         {user.company.name}
                                     </p>
+
+                                    
                                 </div>
                             </SwiperSlide>
                     )}
                 </Swiper>
                 <div className='posts'>
                     <div className='post-name'>
-                        {idActive !== null 
-                        ? 
-                        <p>3 актуальных поста {users[idActive - 1].company.name}</p>
-                        : ''
-                        }
+                        <p>3 актуальных поста {activeCompany}</p>
                     </div>
                     <div className='post-content'>
                         {posts.map (post =>

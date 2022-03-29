@@ -62,3 +62,21 @@
   font-size: 5px;
 }
 
+.svg-1 {
+  position: absolute;
+  left: 0;
+  top: 930px;
+
+}
+
+.svg-2 {
+  position: absolute;
+  right: 0;
+  top: 245px;
+}
+
+.svg-3 {
+  position: absolute;
+  left: 551px;
+  top: 800px;
+}
